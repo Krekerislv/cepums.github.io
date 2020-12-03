@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+	body {
+		font-size: 100%;
+		background-image: url("backg2.jpg");
+	}
+	h1 {
+		font-size: 4em;
+		color: black;
+	}
+	.arrow {
+		visibility: hidden;
+		margin-left:80%;
+		position: absolute;
+		bottom: 15%;
+		z-index: 2;
+	}
+
+	.button {
+		background-color: red;
+		border: none;
+		color: white;
+		padding: 40px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 32px;
+		cursor: pointer;
+
+	}
+	.button1 {border-radius: 50%}
+	
+	.popup .popuptext {
+		visibility: hidden;
+		width: 320px;
+		height: 50px;
+		color: white;
+		font-size: 32px;
+		font-family:Verdana ;
+		text-align: center;
+		border-radius: 40px;
+		padding: 54px; 
+		position: absolute;
+		z-index: 1;
+		left: 36%;
+		bottom: 45%;
+	}
+	.popup .show {
+		visibility: visible;
+	
+	}
+
+	.popup .hide {
+		visibility: hidden;
+	}
+
+	
+	input[type=text] {
+		padding: 12px 20px;
+
+		box-sizing: border-box;
+		border: 1px solid #111;
+		outline: none;
+	}
+
+
+input[type=text]:focus {
+	background-color: cyan;
+}
+
+</style>	
+<title>Cepums</title>
+<link rel = "icon" href =https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Apps-preferences-web-browser-cookies-icon.png>
+
+</head>
+<body>
+
+
+
+<center>
+	<h1 style="font-family:Verdana;">Cepums</h1>
+</center>
+
+<center>
+	<video width="640" height="360" controls>
+		<source src="1jaut.mp4" type="video/mp4">
+	</video>
+</center>
+
+
+<div id="popup_id" class="popup" onclick=parbaudit()>
+	<span class="popuptext" id="iesutit_popup"></span>
+</div>
+
+<center>
+
+<input type="text" id="answer1" placeholder="Tava atbilde, Klintuci (:">
+
+<button class="button button1" class="popup" onclick=parbaudit()>Iesūtīt</button>
+
+</center>
+
+
+<a id="links" class="arrow" href="q2.html">
+	<img src="arrow.png" width=30% height=30%>
+</a>
+
+
+<script>
+function arrow_show() {
+	document.getElementById("links").style.visibility = "visible";
+}
+
+function popup_hide() {
+	document.getElementById("iesutit_popup").style.visibility = "hidden";
+}
+
+function popup_show() {
+	document.getElementById("iesutit_popup").style.visibility = "visible";
+}
+
+function parbaudit() {
+	var input = document.getElementById("answer1").value
+	var output;
+	var popup = document.getElementById("iesutit_popup");
+	if (input === "četri") { //2+2
+		document.getElementById("iesutit_popup").style.backgroundColor = "#00FF00";
+		output="Atbilde ir pareiza";
+		popup_show();
+		setTimeout(arrow_show, 2500);
+		 }
+	else {
+		document.getElementById("iesutit_popup").style.backgroundColor = "red";
+		output="Atbilde ir nepareiza";
+		popup_show();
+		setTimeout(popup_hide, 3500);
+		
+	}
+	document.getElementById("iesutit_popup").innerHTML = output
+}
+
+</script>
+
+</body>
+</html>

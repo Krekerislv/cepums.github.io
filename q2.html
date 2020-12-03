@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+	body {
+		font-size: 100%;
+		background-image: url("backg2.jpg");
+	}
+	h1 {
+		font-size: 4em;
+		color: black;
+	}
+	h2 {
+		font-size: 4em;
+		color: black;
+		position: absolute;
+	}
+	.arrow {
+		visibility: hidden;
+		margin-left:80%;
+		position: absolute;
+		bottom: 15%;
+		z-index: 2;
+	}
+
+	.button {
+		background-color: red;
+		border: none;
+		color: white;
+		padding: 40px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 32px;
+		cursor: pointer;
+
+	}
+	.button1 {border-radius: 50%}
+	
+	.dload {
+		position: absolute;
+	}
+
+	.popup .popuptext {
+		visibility: hidden;
+		width: 320px;
+		height: 50px;
+		color: white;
+		font-size: 32px;
+		font-family:Verdana ;
+		text-align: center;
+		border-radius: 40px;
+		padding: 54px; 
+		position: absolute;
+		z-index: 1;
+		left: 36%;
+		bottom: 45%;
+	}
+	.popup .show {
+		visibility: visible;
+	
+	}
+
+	.popup .hide {
+		visibility: hidden;
+	}
+
+	
+	input[type=text] {
+		padding: 12px 20px;
+
+		box-sizing: border-box;
+		border: 1px solid #111;
+		outline: none;
+	}
+
+
+input[type=text]:focus {
+	background-color: cyan;
+}
+
+</style>	
+<title>Cepums</title>
+<link rel = "icon" href =https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Apps-preferences-web-browser-cookies-icon.png>
+
+</head>
+<body>
+
+
+
+<center>
+	<h1 style="font-family:Verdana;">Cepums</h1>
+</center>
+
+<a class='dload' href='karatavas.exe' download="Karātavas">
+	<img src="arrow1.png" width=20% height=20%>
+</a>
+
+<center>
+	<video width="640" height="360" controls>
+		<source src="2jaut.mp4" type="video/mp4">
+	</video>
+</center>
+
+
+
+<div id="popup_id" class="popup" onclick=parbaudit()>
+	<span class="popuptext" id="iesutit_popup"></span>
+</div>
+
+<h2 id="karatavas"></h1>
+
+<center>
+
+<input type="text" id="answer1" placeholder="Tava atbilde, Klintuci (:">
+
+<button class="button button1" class="popup" onclick=parbaudit()>Iesūtīt</button>
+
+</center>
+
+
+<a id="links" class="arrow" href="3quest.html">
+	<img src="arrow.png" width=30% height=30%>
+</a>
+
+
+
+<script>
+function arrow_show() {
+	document.getElementById("links").style.visibility = "visible";
+}
+
+function popup_hide() {
+	document.getElementById("iesutit_popup").style.visibility = "hidden";
+}
+
+function popup_show() {
+	document.getElementById("iesutit_popup").style.visibility = "visible";
+}
+var id = Math.floor((Math.random() * 12))
+function karatavas_id() {
+	document.getElementById("karatavas").innerHTML = "ID: "+id;
+
+}
+karatavas_id()
+
+function parbaudit() { //karatavas
+	var input = document.getElementById("answer1").value
+	var output;
+	var popup = document.getElementById("iesutit_popup");
+	var rez0 = 5*id+69;
+	var rez = rez0.toString();
+	if (input === rez) {
+		document.getElementById("iesutit_popup").style.backgroundColor = "#00FF00";
+		output="Atbilde ir pareiza";
+		popup_show();
+		setTimeout(arrow_show, 2500);
+		 }
+	else {
+		document.getElementById("iesutit_popup").style.backgroundColor = "red";
+		output="Atbilde ir nepareiza";
+		popup_show();
+		setTimeout(popup_hide, 3500);
+		
+	}
+	document.getElementById("iesutit_popup").innerHTML = output;
+}
+
+
+</script>
+
+</body>
+</html>
