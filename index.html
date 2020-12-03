@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+	body {
+		font-size: 100%;
+		background-image: url("backg2.jpg");
+	}
+	h1 {
+		font-size: 4em;
+		color: black;
+	}
+	a {
+		visibility: hidden;
+	}
+
+</style>
+	
+<title>Cepums</title>
+<link rel = "icon" href =https://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Apps-preferences-web-browser-cookies-icon.png>
+
+</head>
+
+<body>
+
+<center>
+	<h1 style="font-family:Verdana;">Cepums</h1>
+</center>
+
+<center>
+	<video id="intro" width="640" height="360" controls ontimeupdate="show_arrow(this)">
+		<source src="intro.mp4" type="video/mp4">
+	</video>
+</center>
+
+
+<center>
+<a id="links" class="arrow" href="question1.html">
+	<img src="arrow.png" width=15% height=15%>
+</a>
+</center>
+
+
+<script>
+	function show_arrow(event) {
+		document.getElementById("intro").innerHTML = event.currentTime;
+		if (event.currentTime > 30) { //set time as needed
+		document.getElementById("links").style.visibility = "visible";
+	}
+	}
+	
+	
+</script>
+</body>
+</html>	
